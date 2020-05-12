@@ -1,4 +1,5 @@
 body{
+  background-color: #E4F9F5;
   margin: 0;
   text-align: center;
   font-family: "Merriweather",serif;
@@ -27,6 +28,8 @@ h3{
 hr{
   border: dotted  #EAF6F6 6px;
   border-bottom: none;
+  border-left: none;
+  border-right: none;
   width: 4%;
   margin: 100px auto;
   padding: 20px 10px;
