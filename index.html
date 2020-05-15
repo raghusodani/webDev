@@ -48,6 +48,18 @@
 					<span id="emailids" class="text-danger font-weight-bold"> </span>
 				</div>
 
+				<div class="form-group">
+					<label class="font-weight-bold"> Pan Number: </label>
+					<input type="text" name="pan" class="form-control" id="panNum" autocomplete="off">
+					<span id="panNo" class="text-danger font-weight-bold"> </span>
+				</div>
+
+				<div class="form-group">
+					<label class="font-weight-bold"> Aadhaar Number: </label>
+					<input type="text" name="aadhaar" class="form-control" id="aadharNum" autocomplete="off">
+					<span id="aadharNo" class="text-danger font-weight-bold"> </span>
+				</div>
+
 				<input type="submit" name="submit" value="submit"  class="btn btn-danger text-dark" 	autocomplete="off">
 
 
@@ -69,6 +81,8 @@
 			var confirmpass = document.getElementById('conpass').value;
 			var mobileNumber = document.getElementById('mobileNumber').value;
 			var emails = document.getElementById('emails').value;
+			var pan = document.getElementById('panNum').value;
+			var aadhar =document.getElementById('aadharNum').value;
 
 
 
@@ -98,7 +112,7 @@
 				return false;
 			}
 			if((pass.length <= 5) || (pass.length >= 20)) {
-				document.getElementById('passwords').innerHTML =" ** Passwords lenght must be between  5 and 8";
+				document.getElementById('passwords').innerHTML =" ** Passwords lenght must be between  5 and 20";
 				return false;
 			}
 
@@ -119,17 +133,17 @@
 
 
 			if(mobileNumber == ""){
-				document.getElementById('mobileno').innerHTML =" ** Please fill the mobile NUmber field";
-				return false;
-			}
-			if(isNaN(mobileNumber)){
-				document.getElementById('mobileno').innerHTML =" ** user must write digits only not characters";
-				return false;
-			}
-			if(mobileNumber.length!=10){
-				document.getElementById('mobileno').innerHTML =" ** Mobile Number must be 10 digits only";
-				return false;
-			}
+					document.getElementById('mobileno').innerHTML =" ** Please fill the mobile NUmber field";
+					return false;
+				}
+				if(isNaN(mobileNumber)){
+					document.getElementById('mobileno').innerHTML =" ** user must write digits only not characters";
+					return false;
+				}
+				if(mobileNumber.length!=10){
+					document.getElementById('mobileno').innerHTML =" ** Mobile Number must be 10 digits only";
+					return false;
+				}
 
 
 
@@ -144,6 +158,30 @@
 
 			if((emails.charAt(emails.length-4)!='.') && (emails.charAt(emails.length-3)!='.')){
 				document.getElementById('emailids').innerHTML =" ** . Invalid Position";
+				return false;
+			}
+
+
+
+			if(pan == ""){
+				document.getElementById('panNo').innerHTML =" ** Please fill the Pan Number field";
+				return false;
+			}
+			if(pan.length!=10){
+				document.getElementById('panNo').innerHTML =" ** Please fill correct Pan Number";
+				return false;
+			}
+
+			if(aadhar == ""){
+				document.getElementById('aadharNo').innerHTML =" ** Please fill the Aadhaar Number field";
+				return false;
+			}
+			if(isNaN(aadhar)){
+				document.getElementById('aadharNo').innerHTML =" ** user must write digits only not characters";
+				return false;
+		  }
+			if(aadhar.length!=16){
+				document.getElementById('aadharNo').innerHTML =" ** user must write 16 digits Aadhar no ";
 				return false;
 			}
 		}
